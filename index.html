@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -11,6 +10,12 @@
 </head>
 
 <body>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="assets/music/romantic.mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung audio.
+    </audio>
 
     <!-- Floating Hearts -->
     <div class="floating-hearts">
@@ -32,38 +37,68 @@
 
             <h2>🎉 Happy Birthday My Big Man 🎉</h2>
 
-            <h1>Untuk Orang Tersayang JERRY KRISTIAN ❤️</h1>
+            <h1>Untuk My MAN JERRY KRISTIAN ❤️</h1>
 
             <p class="message">
                 Terima kasih sudah hadir dan menjadi alasan banyak senyum dalam hidupku ✨<br><br>
+
                 Semoga semua impianmu perlahan menjadi nyata,
                 langkahmu selalu dipenuhi kebahagiaan,
                 dan senyummu tidak pernah hilang 🌸
+
                 Terima kasih sudah hadir dan menjadi seseorang
                 yang begitu berarti. 💖
+
                 Semoga panjang umur, sehat selalu,
                 dimudahkan segala urusannya,
                 dan selalu dikelilingi cinta serta hal-hal baik 🌷
+
                 Tetap jadi diri kamu yang hangat, manis,
                 dan selalu berhasil membuat hariku terasa lebih hidup.
             </p>
 
-            <!-- Button -->
+            <!-- Tombol Pesan -->
             <button onclick="showWish()">
-                Buka Pesan 💌
+                💌 Buka Pesan
+            </button>
+
+            <br><br>
+
+            <!-- Tombol Musik -->
+            <button onclick="playMusic()">
+                ▶️ Play Music
+            </button>
+
+            <button onclick="pauseMusic()">
+                ⏸️ Pause Music
             </button>
 
             <!-- Hidden Message -->
             <div id="wishBox">
-                <img src="assets\images\I&U.JPG" alt="Foto Spesial" class="wish-photo">
-                
+
+                <img src="assets/images/I&U.JPG"
+                     alt="Foto Spesial"
+                     class="wish-photo">
+
                 <p>
-                ❤️ Aku mungkin tidak sempurna, tapi satu hal yang pasti,
-                    aku akan selalu berusaha ada di sampingmu, dalam keadaan apa pun.
+                    ❤️ Aku mungkin tidak sempurna,
+                    tapi satu hal yang pasti,
+                    aku akan selalu berusaha ada di sampingmu,
+                    dalam keadaan apa pun.
+
                     Dan doaku akan selalu ada untukmu.
+
                     Semoga bahagiamu selalu lebih besar dari sedihmu ❤️
-                Happy Birthday, my love 🎂❤️
-                I love you today, tomorrow, and forever.
+
+                    <br><br>
+
+                    Happy Birthday, My Love 🎂❤️
+
+                    <br><br>
+
+                    I love you today,
+                    tomorrow,
+                    and forever. 💖
                 </p>
 
             </div>
@@ -73,9 +108,39 @@
     </div>
 
     <script>
+
+        const music = document.getElementById("bgMusic");
+
+        // Volume (0.0 - 1.0)
+        music.volume = 0.4;
+
         function showWish(){
-            document.getElementById("wishBox").classList.toggle("show");
+
+            document
+                .getElementById("wishBox")
+                .classList.toggle("show");
+
+            // Putar musik otomatis
+            if(music.paused){
+                music.play().catch(err => {
+                    console.log("Autoplay diblokir:", err);
+                });
+            }
+
         }
+
+        function playMusic(){
+
+            music.play();
+
+        }
+
+        function pauseMusic(){
+
+            music.pause();
+
+        }
+
     </script>
 
 </body>
