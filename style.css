@@ -6,6 +6,28 @@
     box-sizing:border-box;
 }
 
+button{
+    background:#ff4f81;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    margin:8px;
+    border-radius:30px;
+    font-size:16px;
+    cursor:pointer;
+    transition:.3s;
+    box-shadow:0 8px 20px rgba(255,79,129,.3);
+}
+
+button:hover{
+    background:#ff2d6f;
+    transform:translateY(-3px);
+}
+
+button:active{
+    transform:scale(.95);
+}
+
 body{
 
     height:100vh;
